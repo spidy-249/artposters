@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - REACT</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div id="logo">
+                <h1>REACT Admin</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">View Store</a></li>
+                    <li><a href="#" id="admin-logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Dashboard -->
+    <section class="admin-dashboard">
+        <div class="container">
+            <div class="admin-sidebar">
+                <ul>
+                    <li><a href="#" class="active" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#" data-section="products">Products</a></li>
+                    <li><a href="#" data-section="orders">Orders</a></li>
+                    <li><a href="#" data-section="custom-orders">Custom Orders</a></li>
+                    <li><a href="#" data-section="reviews">Reviews</a></li>
+                    <li><a href="#" data-section="users">Users</a></li>
+                    <li><a href="#" data-section="settings">Settings</a></li>
+                </ul>
+            </div>
+            
+            <div class="admin-content">
+                <!-- Dashboard Section -->
+                <div class="admin-section active" id="dashboard-section">
+                    <h2>Dashboard</h2>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-sales">₹0</div>
+                            <div class="stat-label">Total Sales</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-orders">0</div>
+                            <div class="stat-label">Total Orders</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-products">0</div>
+                            <div class="stat-label">Products</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="total-users">0</div>
+                            <div class="stat-label">Users</div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-orders">
+                        <h3>Recent Orders</h3>
+                        <div id="recent-orders-list">
+                            <!-- Orders will be loaded via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Section -->
+                <div class="admin-section" id="products-section">
+                    <h2>Products</h2>
+                    
+                    <div class="admin-actions">
+                        <button class="btn" id="add-product-btn">Add New Product</button>
+                    </div>
+                    
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Category</th>
+                                    <th>Rating</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-table-body">
+                                <!-- Products will be loaded via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Orders Section -->
+                <div class="admin-section" id="orders-section">
+                    <h2>Orders</h2>
+                    
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table-body">
+                                <!-- Orders will be loaded via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Custom Orders Section -->
+                <div class="admin-section" id="custom-orders-section">
+                    <h2>Custom Orders</h2>
+                    
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Theme</th>
+                                    <th>Budget</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="custom-orders-table-body">
+                                <!-- Custom orders will be loaded via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Reviews Section -->
+                <div class="admin-section" id="reviews-section">
+                    <h2>Reviews</h2>
+                    
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product</th>
+                                    <th>Reviewer</th>
+                                    <th>Rating</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reviews-table-body">
+                                <!-- Reviews will be loaded via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Users Section -->
+                <div class="admin-section" id="users-section">
+                    <h2>Users</h2>
+                    
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Orders</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table-body">
+                                <!-- Users will be loaded via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Settings Section -->
+                <div class="admin-section" id="settings-section">
+                    <h2>Settings</h2>
+                    
+                    <form id="admin-settings-form">
+                        <div class="form-group">
+                            <label for="store-name">Store Name:</label>
+                            <input type="text" id="store-name" name="store-name" value="REACT" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="store-email">Store Email:</label>
+                            <input type="email" id="store-email" name="store-email" value="contact@reactposters.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="store-phone">Store Phone:</label>
+                            <input type="tel" id="store-phone" name="store-phone" value="+91 9876543210" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="shipping-cost">Standard Shipping Cost (₹):</label>
+                            <input type="number" id="shipping-cost" name="shipping-cost" value="50" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="express-shipping">Express Shipping Cost (₹):</label>
+                            <input type="number" id="express-shipping" name="express-shipping" value="100" required>
+                        </div>
+                        
+                        <button type="submit" class="btn">Save Settings</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="product-modal-title">Add New Product</h2>
+            
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                
+                <div class="form-group">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-price">Price (₹):</label>
+                        <input type="number" id="product-price" name="product-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-category">Category:</label>
+                        <select id="product-category" name="product-category" required>
+                            <option value="Movie">Movie</option>
+                            <option value="Comic">Comic</option>
+                            <option value="Game">Game</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-rating">Rating (1-5):</label>
+                    <select id="product-rating" name="product-rating" required>
+                        <option value="1">1 ★</option>
+                        <option value="2">2 ★★</option>
+                        <option value="3">3 ★★★</option>
+                        <option value="4">4 ★★★★</option>
+                        <option value="5" selected>5 ★★★★★</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-description">Description:</label>
+                    <textarea id="product-description" name="product-description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-image">Image URL:</label>
+                    <input type="text" id="product-image" name="product-image" required>
+                    <small>For demo purposes, enter a URL to an image. In a real app, you would upload files.</small>
+                </div>
+                
+                <button type="submit" class="btn">Save Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Detail Modal -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Order Details</h2>
+            
+            <div id="order-details-content">
+                <!-- Order details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

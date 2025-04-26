@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order - REACT</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="spiderman-theme">
+        <div class="container">
+            <div id="logo">
+                <h1>REACT</h1>
+                <p>Your Friendly Neighborhood Poster Store</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Posters</a></li>
+                    <li><a href="custom-order.html">Custom Order</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Custom Order Section -->
+    <section class="custom-order">
+        <div class="container">
+            <h1>Custom Poster Order</h1>
+            <p>Have a specific design in mind? Fill out the form below and we'll create a custom poster just for you!</p>
+            
+            <form id="custom-order-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="size">Poster Size:</label>
+                    <select id="size" name="size" required>
+                        <option value="">Select Size</option>
+                        <option value="A4">A4 (8.3 × 11.7 in)</option>
+                        <option value="A3">A3 (11.7 × 16.5 in)</option>
+                        <option value="A2">A2 (16.5 × 23.4 in)</option>
+                        <option value="A1">A1 (23.4 × 33.1 in)</option>
+                        <option value="custom">Custom Size</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="custom-size-group" style="display: none;">
+                    <label for="custom-size">Custom Size (in inches):</label>
+                    <input type="text" id="custom-size" name="custom-size" placeholder="Width × Height">
+                </div>
+                
+                <div class="form-group">
+                    <label for="theme">Poster Theme:</label>
+                    <select id="theme" name="theme" required>
+                        <option value="">Select Theme</option>
+                        <option value="Spiderman">Spiderman</option>
+                        <option value="Marvel">Marvel Comics</option>
+                        <option value="DC">DC Comics</option>
+                        <option value="Movie">Movie</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Design Description:</label>
+                    <textarea id="description" name="description" rows="6" required placeholder="Describe your custom poster design in detail. Include any specific characters, scenes, or styles you want."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reference">Reference Images (Optional):</label>
+                    <input type="file" id="reference" name="reference" multiple accept="image/*">
+                    <small>Upload any reference images that might help us understand your design.</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">Budget Range:</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select Budget</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000-1500">₹1000 - ₹1500</option>
+                        <option value="1500-2000">₹1500 - ₹2000</option>
+                        <option value="2000+">₹2000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="timeline">Required Timeline:</label>
+                    <select id="timeline" name="timeline" required>
+                        <option value="">Select Timeline</option>
+                        <option value="1-2">1-2 weeks</option>
+                        <option value="2-3">2-3 weeks</option>
+                        <option value="3-4">3-4 weeks</option>
+                        <option value="flexible">Flexible</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn">Submit Order Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>REACT</h3>
+                <p>Your one-stop shop for comic book and movie posters in India.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Posters</a></li>
+                    <li><a href="custom-order.html">Custom Order</a></li>
+                    <li><a href="account.html">My Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: contact@reactposters.com</p>
+                <p>Phone: +91 9876543210</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 REACT Poster Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/custom-order.js"></script>
+</body>
+</html>
