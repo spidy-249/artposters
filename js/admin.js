@@ -130,7 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load initial section (dashboard)
     loadDashboardStats();
 });
-
+// Bypass login for demo (remove in production)
+localStorage.setItem('adminLoggedIn', 'true');
 function checkAdminLogin() {
     const isAdminLoggedIn = localStorage.getItem('adminLoggedIn');
     if (!isAdminLoggedIn) {
